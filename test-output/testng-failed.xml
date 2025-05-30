@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AmazonTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="AmazonFullFlow(failed)">
+    <classes>
+      <class name="com.TestAmazonUsingTestNG.AmazonSignIn">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="signInAndAddToCart"/>
+        </methods>
+      </class> <!-- com.TestAmazonUsingTestNG.AmazonSignIn -->
+    </classes>
+  </test> <!-- AmazonFullFlow(failed) -->
+</suite> <!-- Failed suite [AmazonTestSuite] -->
