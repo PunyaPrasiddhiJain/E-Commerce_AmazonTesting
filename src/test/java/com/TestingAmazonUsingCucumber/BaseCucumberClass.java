@@ -21,36 +21,36 @@ public class BaseCucumberClass {
     public static WebDriver driver;
     public static WebDriverWait wait;
 
-//    public static void initializeDriver() {
-//        if (driver == null) {
-//            driver = new FirefoxDriver();
-//            driver.manage().window().maximize();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//            wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-//        }
-//    }
-
     public static void initializeDriver() {
         if (driver == null) {
-            try {
-                // URL of the Selenium Grid hub
-                URL gridUrl = new URL("http://localhost:4444/wd/hub"); // Change if running Grid remotely
-
-                // Define desired capabilities or options
-                FirefoxOptions options = new FirefoxOptions();
-                options.setCapability("browserName", "firefox");
-
-                // Initialize RemoteWebDriver with the Grid hub URL and options
-                driver = new RemoteWebDriver(gridUrl, options);
-                driver.manage().window().maximize();
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-                wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-            } catch (MalformedURLException e) {
-                throw new RuntimeException("Malformed Grid URL: " + e.getMessage());
-            }
+            driver = new FirefoxDriver();
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         }
     }
+
+//    public static void initializeDriver() {
+//        if (driver == null) {
+//            try {
+//                // URL of the Selenium Grid hub
+//                URL gridUrl = new URL("http://192.168.50.160:4444"); // Change if running Grid remotely
+//
+//                // Define desired capabilities or options
+//                FirefoxOptions options = new FirefoxOptions();
+//                options.setCapability("browserName", "firefox");
+//
+//                // Initialize RemoteWebDriver with the Grid hub URL and options
+//                driver = new RemoteWebDriver(gridUrl, options);
+//                driver.manage().window().maximize();
+//                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//                wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+//
+//            } catch (MalformedURLException e) {
+//                throw new RuntimeException("Malformed Grid URL: " + e.getMessage());
+//            }
+//        }
+//    }
     
     public static void quitDriver() {
         if (driver != null) {
